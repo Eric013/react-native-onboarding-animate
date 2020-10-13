@@ -220,6 +220,7 @@ export default class OnboardingAnimate extends React.Component {
         enableBackgroundColorTransition,
         actionableScene,
         activeColor,
+        textColor,
         hideStatusBar,
         navigateButtonTitle,
         navigateButtonCompletedTitle,
@@ -297,7 +298,7 @@ export default class OnboardingAnimate extends React.Component {
                 { width: windowWidth * 0.7, backgroundColor: activeColor },
               ]}
             >
-              <Text style={Styles.btnPositiveText}>
+              <Text style={{ ...Styles.btnPositiveText, color: textColor }}>
                 {this.state.isLastScene
                   ? navigateButtonCompletedTitle
                   : navigateButtonTitle}
@@ -317,6 +318,9 @@ export default class OnboardingAnimate extends React.Component {
 OnboardingAnimate.propTypes = {
   // Mininum acceptable value for allowing navigate to next or previous scene
   minValueSwipeAccepted: PropTypes.number,
+
+  // Color text button when indicator is showing active state
+  textColor: PropTypes.string,
 
   // Color when indicator is showing active state
   activeColor: PropTypes.string,
