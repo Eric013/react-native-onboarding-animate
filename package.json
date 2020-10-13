@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/ambistudio/react-native-onboarding-animate/issues"
   },
-  "homepage": "https://github.com/ambistudio/react-native-onboarding-animate#readme"
+  "homepage": "https://github.com/ambistudio/react-native-onboarding-animate#readme",
+  "dependencies": {}
 }

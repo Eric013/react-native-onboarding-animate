@@ -43,10 +43,10 @@ export default class OnboardingAnimate extends React.Component {
   }
 
   // When user is swiping, animate x cordinate accordingly
-  _handlePanResponderMove = Animated.event([
-    null,
-    { dx: this._translateXValue },
-  ]);
+  _handlePanResponderMove = Animated.event(
+    [null, { dx: this._translateXValue }],
+    { useNativeDriver: true }
+  );
 
   // Handler when user stop swiping action
   _handlePanResponderEnd = (handler) => {
@@ -242,11 +242,14 @@ export default class OnboardingAnimate extends React.Component {
           vertical={false}
           showsHorizontalScrollIndicator={false}
           scrollEventThrottle={14}
-          onScroll={Animated.event([
-            {
-              nativeEvent: { contentOffset: { x: this._translateXValue } },
-            },
-          ])}
+          onScroll={Animated.event(
+            [
+              {
+                nativeEvent: { contentOffset: { x: this._translateXValue } },
+              },
+            ],
+            { useNativeDriver: true }
+          )}
           onScrollEndDrag={this._handlePanResponderEnd}
         >
           <View
